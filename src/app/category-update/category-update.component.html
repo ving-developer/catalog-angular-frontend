@@ -1,1 +1,14 @@
-<p>category-update works!</p>
+<div>
+    <h3>Update Category</h3>
+</div>
+<form class="example-container" [formGroup]="categoryForm" (ngSubmit)="updateCategory(categoryForm.value)">
+    <mat-form-field>
+        <input matInput name="name" placeholder="Category name" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput name="imageUrl" placeholder="Image" formControlName="imageUrl">
+    </mat-form-field>
+    <br>
+    <button type="submit" [disabled]="!categoryForm.valid" mat-button color="primary" >Update</button>
+</form>

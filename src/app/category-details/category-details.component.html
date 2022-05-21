@@ -1,1 +1,25 @@
-<p>category-details works!</p>
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+      <button mat-flat-button color="accent" [routerLink]="['/categories']"><mat-icon>list</mat-icon> Return</button>
+    </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title><h2>{{category.name}}</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <dl>
+          <dt>Image :</dt>
+          <dd>{{category.imageUrl}}</dd>
+        </dl>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary" class="teste" [routerLink]="['/category-update', category.categoryId]"><mat-icon>edit</mat-icon> Edit</button>
+        <button mat-flat-button color="warn" (click)="deleteCategory(category.categoryId)"><mat-icon>delete</mat-icon> Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

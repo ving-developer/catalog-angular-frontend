@@ -1,1 +1,16 @@
-<p>category-create works!</p>
+<div>
+    <h3>New Category</h3>
+</div>
+
+<form [formGroup]="categoryForm" (ngSubmit)="addCategory(categoryForm.value)">
+    <mat-form-field>
+        <input matInput name="name" placeholder="Category name" formControlName="name"/>
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+        <textarea matInput name="imageUrl" placeholder="Imagem" formControlName="imageUrl"></textarea>
+    </mat-form-field>
+    <br/>
+    <br/>
+    <button type="submit" [disabled]="!categoryForm.valid" mat-button color="primary">Create</button>
+</form>
